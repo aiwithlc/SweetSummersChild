@@ -92,13 +92,71 @@
     }
 
     header.hero {
-      margin-top: 64px;
-      text-align: center;
-      padding: 7rem 1rem 6rem;
-      background: linear-gradient(to right, #F6E8EA, #D8E2DC, #ECE4DB);
-      position: relative;
-      overflow: hidden;
-    }
+  margin-top: 64px;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(to right, #F6E8EA, #D8E2DC, #ECE4DB);
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+}
+
+.hero-overlay {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.6));
+  background-image: url('https://imthelc.com/wp-content/uploads/2025/05/pexels-fotios-photos-1902830-scaled.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-logo {
+  width: 90px;
+  margin-bottom: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #6A5D7B, #E4A3B1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  color: #444;
+  margin: 0 auto 1rem;
+  max-width: 600px;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  margin-top: 1rem;
+}
 
     header.hero::before {
       content: "";
@@ -112,20 +170,6 @@
     header.hero .hero-content {
       position: relative;
       z-index: 2;
-    }
-
-    .hero-logo {
-      width: 84px;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
-
-    header h1 {
-      font-size: 2.7rem;
-      background: linear-gradient(to right, #6A5D7B, #E4A3B1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     header p {
@@ -283,25 +327,28 @@
 
 <body>
   <!-- Sticky Header -->
-  <header class="ssc-mini-header">
-    <a href="/">
-      <img class="ssc-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
-    </a>
-    <nav class="ssc-nav">
-      <a href="match.html">Find Your Buddy</a>
-      <a href="about.html">About</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
-  </header>
+<header class="ssc-mini-header">
+  <a href="/">
+    <img class="ssc-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
+  </a>
+  <nav class="ssc-nav">
+    <a href="match.html">Find Your Buddy</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <img class="hero-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
-      <h1>Sweet Summer's Child</h1>
-      <p>Find your handmedown buddy and build a village of love, one tiny sweater at a time.</p>
-    </div>
-  </header>
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo" data-aos="fade-down" data-aos-delay="100">
+    <h1 class="hero-content-h1" data-aos="fade-up" data-aos-delay="200">Sweet Summer's Child</h1>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="300">Find your handmedown buddy and build a village of love, one tiny sweater at a time.</p>
+    <p class="hero-tagline" data-aos="fade-up" data-aos-delay="400">Because every baby deserves a village 🌸</p>
+    <a href="match.html" class="cta-button hero-cta" data-aos="zoom-in" data-aos-delay="500">Find Your Buddy</a>
+  </div>
+</header>
 
   <!-- Main -->
   <main>
