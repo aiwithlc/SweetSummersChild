@@ -1,310 +1,372 @@
-<!-- 🌼 Sweet Summer’s Child – Final Mini Site Layout -->
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png">
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: #FAF9F6;
-    font-family: 'Nunito', sans-serif;
-    color: #222;
-    scroll-behavior: smooth;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 🌼 Sweet Summer’s Child – Final Mini Site Layout -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Summer's Child – Handmedown Buddy System</title>
+  <link rel="icon" type="image/png" href="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  /* Mini Sticky Header */
-  .ssc-mini-header {
-    background: #ffffffee;
-    backdrop-filter: blur(12px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 1rem;
-    height: 56px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    border-bottom: 1px solid #eee;
-  }
+  <!-- ✅ Meta Tags -->
+  <meta name="description" content="Find your handmedown buddy and build a village of love, one tiny sweater at a time. Sweet Summer’s Child helps parents connect, share, and care together." />
+  <meta name="keywords" content="baby clothes exchange, Toronto moms, handmedowns, motherhood support, parenting community, eco family, Sweet Summer’s Child" />
+  <meta name="author" content="LC at Sweet Summer's Child" />
+  <meta property="og:title" content="Sweet Summer's Child – Handmedown Buddy System" />
+  <meta property="og:description" content="Build your baby’s village. Find a handmedown buddy near you and share the love." />
+  <meta property="og:image" content="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" />
+  <meta property="og:url" content="https://aiwithlc.github.io/SweetSummersChild/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sweet Summer's Child – Handmedown Buddy System" />
+  <meta name="twitter:description" content="Find your handmedown buddy and build a modern parenting village rooted in love, sharing, and sustainability." />
+  <meta name="twitter:image" content="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" />
 
-  .ssc-mini-header .ssc-logo {
-    height: 36px;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    transition: transform 0.3s ease;
-  }
-
-  .ssc-mini-header .ssc-logo:hover {
-    transform: scale(1.05) rotate(1deg);
-  }
-
-  .ssc-nav {
-    display: flex;
-    gap: 1rem;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .ssc-nav a {
-    color: #6A5D7B;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.2rem 0;
-    transition: color 0.3s ease;
-  }
-
-  .ssc-nav a:hover {
-    color: #E4A3B1;
-  }
-
-  @media (max-width: 768px) {
-    .ssc-mini-header {
-      flex-direction: column;
-      height: auto;
-      padding: 0.5rem 1rem;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #FAF9F6;
+      font-family: 'Nunito', sans-serif;
+      color: #222;
+      scroll-behavior: smooth;
     }
+
+    .ssc-mini-header {
+      background: #ffffffee;
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.3rem 1rem;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid #eee;
+    }
+
+    .ssc-mini-header .ssc-logo {
+      height: 36px;
+      transition: transform 0.3s ease;
+    }
+
+    .ssc-mini-header .ssc-logo:hover {
+      transform: scale(1.05) rotate(1deg);
+    }
+
     .ssc-nav {
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-top: 0.3rem;
+      display: flex;
+      gap: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .ssc-nav a {
+      color: #6A5D7B;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.2rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .ssc-nav a:hover {
+      color: #E4A3B1;
+    }
+
+    @media (max-width: 768px) {
+      .ssc-mini-header {
+        flex-direction: column;
+        height: auto;
+        padding: 0.5rem 1rem;
+      }
+      .ssc-nav {
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: 0.3rem;
+        text-align: center;
+      }
+    }
+
+    header.hero {
+      margin-top: 64px;
+      text-align: center;
+      padding: 7rem 1rem 6rem;
+      background: linear-gradient(to right, #F6E8EA, #D8E2DC, #ECE4DB);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header.hero::before {
+      content: "";
+      background: url('http://imthelc.com/wp-content/uploads/2025/05/pexels-fotios-photos-1902830-scaled.jpg') center/cover no-repeat;
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      z-index: 1;
+    }
+
+    header.hero .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-logo {
+      width: 84px;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    header h1 {
+      font-size: 2.7rem;
+      background: linear-gradient(to right, #6A5D7B, #E4A3B1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .sparkles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: sparkle 4s infinite;
+    }
+
+    @keyframes sparkle {
+      0% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+      100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    }
+
+    main {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
     }
-  }
-  /* ☀️ Hero */
-  header.hero {
-    margin-top: 64px;
-    text-align: center;
-    padding: 7rem 1rem 6rem;
-    background: linear-gradient(to right, #F6E8EA, #D8E2DC, #ECE4DB);
-    position: relative;
-    overflow: hidden;
-  }
 
-  header.hero::before {
-    content: "";
-    background: url('http://imthelc.com/wp-content/uploads/2025/05/pexels-fotios-photos-1902830-scaled.jpg') center/cover no-repeat;
-    position: absolute;
-    inset: 0;
-    opacity: 0.2;
-    z-index: 1;
-  }
-
-  header.hero .hero-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-logo {
-    width: 84px;
-    margin-bottom: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  }
-
-  header h1 {
-  font-size: 2.7rem;
-  background: linear-gradient(to right, #6A5D7B, #E4A3B1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-  header p {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  /* 🧺 Main Content */
-  main {
-    padding: 3rem 1rem;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    color: #6A5D7B;
-    margin-bottom: 1rem;
-  }
-
-  .features {
-    display: grid;
-    gap: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .features {
-      grid-template-columns: repeat(3, 1fr);
+    .section-title {
+      font-size: 2rem;
+      color: #6A5D7B;
+      margin-bottom: 1rem;
     }
-  }
 
-  .feature-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-  }
+    .features {
+      display: grid;
+      gap: 2rem;
+    }
 
-  .feature-card:hover {
-    transform: translateY(-5px);
-  }
+    @media (min-width: 768px) {
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-  .cta-wrapper {
-    margin: 4rem 0;
-  }
+    .feature-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
 
-  .cta-text {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    color: #444;
-  }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
 
-  .cta-button {
-    background: linear-gradient(to right, #D8E2DC, #FFE5D9);
-    color: #6A5D7B;
-    padding: 1rem 2rem;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
+    .cta-wrapper {
+      margin: 4rem 0;
+    }
 
-  .cta-button:hover {
-    background: linear-gradient(to right, #FFE5D9, #D8E2DC);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  }
+    .cta-text {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
 
-  .why-matters ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    text-align: left;
-    max-width: 600px;
-  }
+    .cta-button {
+      background: linear-gradient(to right, #D8E2DC, #FFE5D9);
+      color: #6A5D7B;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .why-matters li {
-    font-size: 1.05rem;
-    color: #555;
-    margin: 1rem 0;
-  }
+    .cta-button:hover {
+      background: linear-gradient(to right, #FFE5D9, #D8E2DC);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
 
-  .testimonial {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    font-style: italic;
-    color: #555;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
+    section.why-matters {
+      background: #FFFAF0;
+      border-radius: 1rem;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
 
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-    padding: 3rem 1rem;
-  }
+    .why-matters ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      text-align: left;
+      max-width: 600px;
+    }
 
-  footer a {
-    color: #6A5D7B;
-    text-decoration: none;
-    font-weight: 600;
-  }
+    .why-matters li {
+      font-size: 1.05rem;
+      color: #555;
+      margin: 1rem 0;
+    }
 
-  footer a:hover {
-    color: #E4A3B1;
-  }
-  footer a::after {
-  content: " 💕";
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-footer a:hover::after {
-  opacity: 1;
-}
+    section.testimonials {
+      background: #FDF0F2;
+      border-radius: 1rem;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
 
-</style>
+    .testimonial {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      font-style: italic;
+      color: #555;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
 
-<!-- Sticky Header HTML -->
-<header class="ssc-mini-header">
-  <a href="/">
-    <img class="ssc-logo" src="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
-  </a>
-  <nav class="ssc-nav">
-    <a href="match.html">Find Your Buddy</a>
-    <a href="about.html">About</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
-</header>
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      padding: 3rem 1rem;
+    }
 
-<!-- ☀️ Hero -->
-<header class="hero">
-  <div class="hero-content">
-    <img class="hero-logo" src="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
-    <h1>Sweet Summer's Child</h1>
-    <p>Find your handmedown buddy and build a village of love, one tiny sweater at a time.</p>
-  </div>
-</header>
+    footer a {
+      color: #6A5D7B;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-<!-- 🌼 Main -->
-<main>
-  <h2 class="section-title">How It Works</h2>
-  <div class="features">
-    <div class="feature-card">
-      <h3>Sign Up</h3>
-      <p>Share a little about your little one and what you need—or what you can share!</p>
+    footer a:hover {
+      color: #E4A3B1;
+    }
+
+    footer a::after {
+      content: " 💕";
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    footer a:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Header -->
+  <header class="ssc-mini-header">
+    <a href="/">
+      <img class="ssc-logo" src="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
+    </a>
+    <nav class="ssc-nav">
+      <a href="match.html">Find Your Buddy</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="http://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
+      <h1>Sweet Summer's Child</h1>
+      <p>Find your handmedown buddy and build a village of love, one tiny sweater at a time.</p>
     </div>
-    <div class="feature-card">
-      <h3>Get Matched</h3>
-      <p>We pair you with a handmedown buddy in your city based on age, size, and vibe.</p>
+    <div class="sparkles"></div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <h2 class="section-title">How It Works</h2>
+    <div class="features">
+      <div class="feature-card" data-aos="fade-up">
+        <h3>Sign Up</h3>
+        <p>Share a little about your little one and what you need—or what you can share!</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Get Matched</h3>
+        <p>We pair you with a handmedown buddy in your city based on age, size, and vibe.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Pass it On</h3>
+        <p>Receive gently loved items—and pass yours along when you're ready.</p>
+      </div>
     </div>
-    <div class="feature-card">
-      <h3>Pass it On</h3>
-      <p>Receive gently loved items—and pass yours along when you're ready.</p>
+
+    <div class="cta-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <p class="cta-text">Ready to find your handmedown buddy?</p>
+      <a href="match.html" class="cta-button">Find Your Buddy</a>
     </div>
-  </div>
 
-  <div class="cta-wrapper">
-    <p class="cta-text">Ready to find your handmedown buddy?</p>
-    <a href="match.html" class="cta-button">Find Your Buddy</a>
-  </div>
+    <section class="why-matters" data-aos="fade-up">
+      <h2 class="section-title">Why It Matters</h2>
+      <ul>
+        <li>🌎 Reduces waste and saves our planet for our little ones.</li>
+        <li>🧑‍🍼 Builds a village for moms, babies, and communities.</li>
+        <li>💸 Lightens the financial load of growing up fast.</li>
+      </ul>
+    </section>
 
-  <section class="why-matters">
-    <h2 class="section-title">Why It Matters</h2>
-    <ul>
-      <li>🌎 Reduces waste and saves our planet for our little ones.</li>
-      <li>🧑‍🍼 Builds a village for moms, babies, and communities.</li>
-      <li>💸 Lightens the financial load of growing up fast.</li>
-    </ul>
-  </section>
+    <section class="testimonials" data-aos="fade-up">
+      <h2 class="section-title">Handmedown Love</h2>
+      <div class="testimonial">"Thanks to Sweet Summer's Child, my baby had everything she needed her first year — and I made a new friend too!"</div>
+      <div class="testimonial">"Passing along my baby's clothes felt so meaningful. It’s like our memories live on!"</div>
+    </section>
+  </main>
 
-  <section class="testimonials">
-    <h2 class="section-title">Handmedown Love</h2>
-    <div class="testimonial">"Thanks to Sweet Summer's Child, my baby had everything she needed her first year — and I made a new friend too!"</div>
-    <div class="testimonial">"Passing along my baby's clothes felt so meaningful. It’s like our memories live on!"</div>
-  </section>
-</main>
+  <!-- Footer -->
+  <footer>
+    🤍 Made with love + community magic by <a href="https://www.lcacosta.com">LC</a> | © 2025 Sweet Summer's Child
+  </footer>
 
-<!-- 🌙 Footer -->
-<footer>
-  🤍 Made with love + community magic by <a href="https://www.lcacosta.com">LC</a> | © 2025 Sweet Summer's Child
-</footer>
-
-<!-- ✨ Sparkles Script -->
-<script>
-  const sparklesContainer = document.querySelector('.sparkles');
-  for (let i = 0; i < 16; i++) {
-    const sparkle = document.createElement('div');
-    sparkle.classList.add('sparkle');
-    sparkle.style.top = Math.random() * 100 + '%';
-    sparkle.style.left = Math.random() * 100 + '%';
-    sparkle.style.animationDelay = (Math.random() * 5) + 's';
-    sparklesContainer.appendChild(sparkle);
-  }
-</script>
+  <!-- Scripts -->
+  <script>
+    const sparklesContainer = document.querySelector('.sparkles');
+    for (let i = 0; i < 16; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = (Math.random() * 5) + 's';
+      sparklesContainer.appendChild(sparkle);
+    }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
