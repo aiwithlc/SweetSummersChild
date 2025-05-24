@@ -92,32 +92,38 @@
     }
 
     header.hero {
-  margin-top: 0px;
+  margin-top: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #F6E8EA, #EAF4F4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 90vh;
   position: relative;
   text-align: center;
-  background: linear-gradient(to right, #F6E8EA, #D8E2DC, #ECE4DB);
   overflow: hidden;
-  min-height: 100vh; /* Make full height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1rem;
-  box-sizing: border-box;
 }
 
 .hero-content {
-  position: relative;
+  padding: 3rem 1.5rem 2rem;
+  max-width: 720px;
+  margin-top: 4rem;
   z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-logo {
-  width: 90px;
+  width: 96px;
+  height: 96px;
   margin-bottom: 1.2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  padding: 0.5rem;
 }
 
 .hero-content h1 {
