@@ -133,29 +133,6 @@
       margin: 0 auto;
     }
 
-    .sparkles {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: sparkle 4s infinite;
-    }
-
-    @keyframes sparkle {
-      0% { transform: translateY(0) scale(1); opacity: 0.6; }
-      50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
-      100% { transform: translateY(0) scale(1); opacity: 0.6; }
-    }
-
     main {
       padding: 3rem 1rem;
       max-width: 900px;
@@ -355,17 +332,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    const sparklesContainer = document.querySelector('.sparkles');
-    for (let i = 0; i < 16; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.top = Math.random() * 100 + '%';
-      sparkle.style.left = Math.random() * 100 + '%';
-      sparkle.style.animationDelay = (Math.random() * 5) + 's';
-      sparklesContainer.appendChild(sparkle);
-    }
-  </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 </body>
