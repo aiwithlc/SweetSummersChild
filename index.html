@@ -158,15 +158,6 @@
   margin-top: 1rem;
 }
 
-    header.hero::before {
-      content: "";
-      background: url('https://imthelc.com/wp-content/uploads/2025/05/pexels-fotios-photos-1902830-scaled.jpg') center/cover no-repeat;
-      position: absolute;
-      inset: 0;
-      opacity: 0.2;
-      z-index: 1;
-    }
-
     header.hero .hero-content {
       position: relative;
       z-index: 2;
@@ -178,6 +169,24 @@
       max-width: 640px;
       margin: 0 auto;
     }
+   @media (max-width: 768px) {
+  .hero-content {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .hero-logo {
+    width: 64px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+  }
+}
+
 
     main {
       padding: 5rem 2rem;
@@ -321,6 +330,9 @@
 .cta-wrapper {
   margin-top: 5rem;
 }
+[data-aos] {
+  transition-timing-function: ease-out !important;
+}
 
   </style>
 </head>
@@ -329,7 +341,7 @@
   <!-- Sticky Header -->
 <header class="ssc-mini-header">
   <a href="/">
-    <img class="ssc-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo">
+    <img class="ssc-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer’s Child pastel illustrated logo with a baby bear and stars"">
   </a>
   <nav class="ssc-nav">
     <a href="match.html">Find Your Buddy</a>
@@ -342,7 +354,7 @@
 <header class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <img class="hero-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer's Child Logo" data-aos="fade-down" data-aos-delay="100">
+    <img class="hero-logo" src="https://imthelc.com/wp-content/uploads/2025/05/ChatGPT-Image-Apr-29-2025-12_03_58-AM.png" alt="Sweet Summer’s Child pastel illustrated logo with a baby bear and stars"" data-aos="fade-down" data-aos-delay="100">
     <h1 class="hero-content-h1" data-aos="fade-up" data-aos-delay="200">Sweet Summer's Child</h1>
     <p class="hero-sub" data-aos="fade-up" data-aos-delay="300">Find your handmedown buddy and build a village of love, one tiny sweater at a time.</p>
     <p class="hero-tagline" data-aos="fade-up" data-aos-delay="400">Because every baby deserves a village 🌸</p>
