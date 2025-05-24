@@ -220,6 +220,15 @@
   footer a:hover {
     color: #E4A3B1;
   }
+  footer a::after {
+  content: " 💕";
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+footer a:hover::after {
+  opacity: 1;
+}
+
 </style>
 
 <!-- Sticky Header HTML -->
