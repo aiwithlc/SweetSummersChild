@@ -1,0 +1,290 @@
+<!--  Sweet Summer's Child — Glow-Up Matching Form Page (Final Clean Version) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find Your Handmedown Buddy </title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /*  Base Layout */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      background: #FAF9F6;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    main {
+      min-height: calc(100vh - 150px); /* leave space for footer */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    /*  Form Container */
+    .form-container {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      width: 100%;
+      max-width: 600px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    /*  Form Steps */
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #6A5D7B;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: #fdfdfd;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /*  Branded Button */
+    button {
+      background: linear-gradient(to right, #D8E2DC, #FFE5D9);
+      color: #6A5D7B;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #FFE5D9, #D8E2DC);
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /*  Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    footer a {
+      color: #BABAE0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #E4A3B1;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+  <div class="form-container">
+    <form id="buddyForm" action="YOUR_AIRTABLE_WEBHOOK_URL" method="POST">
+      
+      <!--  Step 1: About You -->
+      <div class="step active">
+        <div class="form-group">
+          <label>Your Name </label>
+          <input type="text" name="Name" required>
+        </div>
+        <div class="form-group">
+          <label>Your Email </label>
+          <input type="email" name="Email" required>
+        </div>
+        <div class="button-row">
+          <button type="button" onclick="nextStep()">Next </button>
+        </div>
+      </div>
+
+      <!--  Step 2: About Your Baby -->
+      <div class="step">
+        <div class="form-group">
+          <label>Current Clothing Size </label>
+          <select name="Clothing Size" required>
+            <option value="">Select...</option>
+            <option>NB</option>
+            <option>0-3M</option>
+            <option>3-6M</option>
+            <option>6-9M</option>
+            <option>9-12M</option>
+            <option>12-18M</option>
+            <option>18-24M</option>
+            <option>2T</option>
+            <option>3T</option>
+            <option>4T</option>
+            <option>5T</option>
+            <option>6+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Clothing Style </label>
+          <select name="Clothing Style" required>
+            <option value="">Select...</option>
+            <option>Gender Neutral</option>
+            <option>Feminine</option>
+            <option>Masculine</option>
+            <option>Mix of Everything</option>
+          </select>
+        </div>
+        <div class="button-row">
+          <button type="button" onclick="prevStep()"> Back</button>
+          <button type="button" onclick="nextStep()">Next </button>
+        </div>
+      </div>
+
+      <!--  Step 3: About Your Home -->
+      <div class="step">
+        <div class="form-group">
+          <label>Is your home smoke-free? </label>
+          <select name="Smoke-Free" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No - outdoor smoking only</option>
+            <option>No - indoor smoking</option>
+            <option>Cannabis use</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Pets? </label>
+          <input type="text" name="Pets" placeholder="e.g., 1 cat, 2 dogs">
+        </div>
+        <div class="form-group">
+          <label>First 3 Postal Code Letters </label>
+          <input type="text" name="Postal Code" maxlength="3" required>
+        </div>
+        <div class="button-row">
+          <button type="button" onclick="prevStep()"> Back</button>
+          <button type="button" onclick="nextStep()">Next </button>
+        </div>
+      </div>
+
+      <!--  Step 4: Hopes + Preferences -->
+      <div class="step">
+        <div class="form-group">
+          <label>Types of Handmedowns </label>
+          <textarea name="Handmedown Types" placeholder="Clothes, shoes, toys, etc."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Other Notes </label>
+          <textarea name="Other Notes" placeholder="Allergies, sensitivities, special hopes..."></textarea>
+        </div>
+        <div class="button-row">
+          <button type="button" onclick="prevStep()"> Back</button>
+          <button type="submit">Submit </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<footer>
+  © 2025 Sweet Summer's Child |  
+  <a href="#">Privacy Policy</a> | 
+  <a href="#">Contact</a>
+</footer>
+
+<script>
+  const steps = document.querySelectorAll('.step');
+  let currentStep = 0;
+
+  function nextStep() {
+    if (currentStep < steps.length - 1) {
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      steps[currentStep].classList.add('active');
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      steps[currentStep].classList.remove('active');
+      currentStep--;
+      steps[currentStep].classList.add('active');
+    }
+  }
+<script>
+  const steps = document.querySelectorAll('.step');
+  let currentStep = 0;
+
+  function nextStep() {
+    if (currentStep < steps.length - 1) {
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      steps[currentStep].classList.add('active');
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      steps[currentStep].classList.remove('active');
+      currentStep--;
+      steps[currentStep].classList.add('active');
+    }
+  }
+
+  //  Redirect to success page after submit
+  const form = document.getElementById('buddyForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop normal form action
+    window.location.href = '/sweet-summers-child/success'; // <<< CHANGE THIS TO YOUR REAL SUCCESS PAGE URL
+  });
+</script>
+
+</script>
+
+</body>
+</html>
